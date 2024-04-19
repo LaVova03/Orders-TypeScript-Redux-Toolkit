@@ -1,0 +1,16 @@
+body,
+html {
+  background-color: aliceblue !important;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+.products__wrap {
+  display: flex;
+  width: max-content;
+  float: left;
+}
+
+.products__wrap.visible {
+  height: 0;
+}

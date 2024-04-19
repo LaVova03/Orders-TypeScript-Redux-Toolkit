@@ -1,0 +1,145 @@
+.body__orders__wrap {
+  margin-left: 40px;
+  margin-top: 55px;
+  color: gray;
+}
+
+.body__orders__wrap > div {
+  display: flex;
+  align-items: center;
+}
+
+.body__orders__wrap > div > button {
+  width: max-content;
+  height: max-content;
+  background-color: inherit;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.body__orders__wrap > div > button > img {
+  width: 40px;
+  height: 22px;
+}
+
+.body__orders__wrap > div > label {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.body__orders__wrap > ul {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-left: 40px;
+  padding: 10px 30px;
+  border: 1px solid rgb(221, 220, 220);
+  border-radius: 4px;
+}
+
+.body__orders__wrap > ul li {
+  width: 120px;
+}
+
+.body__orders__wrap > ul > li > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0;
+  border: 1px solid rgb(219, 219, 219);
+}
+
+.body__orders__wrap > ul > li > button > img {
+  width: 30px;
+}
+
+.body__orders__wrap > ul > li > label:first-child {
+  font-size: 22px;
+  height: max-content;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.body__orders__wrap > ul > li > label:last-child {
+  font-size: 18px;
+  height: max-content;
+}
+
+.body__orders__wrap > ul > li:nth-of-type(1) {
+  min-width: 80px;
+  width: max-content;
+  font-size: 20px;
+}
+
+.body__orders__wrap > ul > li:nth-of-type(2) {
+  display: block;
+  width: 5em;
+}
+
+.body__orders__wrap > ul > li:nth-of-type(3) {
+  display: block;
+}
+
+.body__orders__wrap > ul > li:nth-of-type(5) {
+  font-size: 14px;
+  height: max-content;
+  display: block;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-left: 30px;
+}
+
+.body__orders__wrap > ul > li:nth-of-type(6) {
+  width: 30px;
+}
+
+.body__orders__wrap > ul > li > button > img {
+  width: 40px;
+  height: 22px;
+}
+
+#orders__body__right {
+  height: max-content;
+  width: 40px;
+}
+
+#orders__body__right > img {
+  width: 20xp;
+  height: 50px;
+}
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.modal__info {
+  opacity: 1;
+  transition: opacity 0.5s;
+  height: max-content;
+  width: max-content;
+}
+
+.modal__info__none {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
+
+}

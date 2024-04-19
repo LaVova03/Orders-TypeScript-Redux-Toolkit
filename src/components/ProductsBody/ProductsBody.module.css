@@ -1,0 +1,45 @@
+.header__products {
+  margin-top: 55px;
+  background-color: aliceblue;
+}
+
+.header__products ul {
+  display: flex;
+}
+
+.header__products ul > li {
+  margin-right: 50px;
+  display: flex;
+  width: 145px;
+}
+
+.products__selector {
+  margin-left: 30px;
+}
+
+.header__products ul > li > label {
+  color: gray;
+}
+
+.header__products ul > li > select {
+  width: 200px;
+  height: 22px;
+  font-size: 14px;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 4px;
+}
+
+.header__products ul > li:nth-of-type(1) {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.header__products ul > li:nth-of-type(3) {
+  margin-right: 0;
+}
+
+

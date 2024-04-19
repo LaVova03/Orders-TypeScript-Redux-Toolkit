@@ -1,0 +1,5 @@
+.orders_wrap {
+  display: flex;
+  background-color: aliceblue;
+  width: max-content;
+}

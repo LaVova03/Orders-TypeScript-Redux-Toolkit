@@ -1,0 +1,34 @@
+.data_guarantee {
+  display: block;
+  width: 170px !important;
+}
+
+.data_price > ul {
+  display: block;
+  width: 150px;
+}
+
+.body__products__ul {
+  background-color: white;
+  margin-left: 40px;
+  padding: 10px 30px;
+  border: 1px solid rgb(221, 220, 220);
+  border-radius: 4px;
+  color: gray;
+}
+
+.body__products__ul > li > img {
+  width: 50px;
+  height: 40px;
+}
+
+.body__products__ul > li {
+  display: flex;
+  width: 120px;
+  align-items: center;
+}
+
+.body__products__ul > li:last-child {
+  width: 230px;
+  margin-right: 0;
+}
