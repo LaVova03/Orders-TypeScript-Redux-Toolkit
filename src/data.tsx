@@ -89,26 +89,4 @@ export const products = [
   }
 ]
 
-// [
-  // {
-  //   "title": "Order 1",
-  //   "image": "1",
-  //   "description": "description 1",
-  //   "date": "2017-06-29 12:09:33",
-  //   "id": "1"
-  // },
-//   {
-//     "title": "Order 2",
-//     "date": "2017-06-29 12:09:33",
-//     "description": "description 2",
-//     "image": "1",
-//     "id": "2"
-//   },
-//   {
-//     "title": "Order 3",
-//     "date": "2017-06-29 12:09:33",
-//     "description": "description 3",
-//     "image": "1",
-//     "id": "3"
-//   }
-// ]
+

@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import AppRouter from "./router";
 import { store } from "./store/store";
@@ -26,13 +26,19 @@ i18n.use(initReactI18next).init({
   },
 });
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <I18nextProvider i18n={i18n}>
-        <AppRouter />
-      </I18nextProvider>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+
+  root.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <AppRouter />
+        </I18nextProvider>
+      </Provider>
+    </React.StrictMode>
+  );
+} else {
+  console.error("Root element not found!");
+}
