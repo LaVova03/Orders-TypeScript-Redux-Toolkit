@@ -1,11 +1,12 @@
 import styles from "./LeftMenu.module.css";
 import React, { useState } from "react";
-import Gratis from "../../assets/gratis.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { setPage } from "../../features/ChangePage";
 import { useTranslation } from "react-i18next";
+
+import Gratis from "../../assets/gratis.png";
 
 interface LeftMenuType {
   isPage?: boolean;
@@ -18,18 +19,21 @@ const LeftMenu: React.FC<LeftMenuType> = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const [isPhoto, addPhoto] = useState(null);
+  const [isPhoto, addPhoto] = useState<string | null>(null);
 
-  const handleFileChange = (e: any) => {
-    const file = e.target.files[0];
-    const reader: any = new FileReader();
-    reader.onload = () => {
-      addPhoto(reader.result);
-    };
-    reader.readAsDataURL(file);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    alert(typeof e);
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        addPhoto(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
-  const handleTogglePage = () => {
+  const handleTogglePage = (): void => {
     dispatch(setPage());
   };
 

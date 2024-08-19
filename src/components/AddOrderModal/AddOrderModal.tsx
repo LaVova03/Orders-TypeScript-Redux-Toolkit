@@ -1,14 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./AddOrderModal.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
+import { Dispatch } from "redux";
+
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import postOrder from "../../requests/postOrder";
 
 interface AddOrderModalProps {
-  showAddOrderModal?: any;
-  postOrder?: (data: any, dispatch: any) => void;
+  showAddOrderModal?: (show: boolean) => void;
+  postOrder?: (data: object, dispatch: Dispatch) => void;
   isDate?: string;
   isTime?: string;
 }
@@ -39,14 +41,16 @@ const AddOrderModal: React.FC<AddOrderModalProps> = ({ showAddOrderModal }) => {
     if (checkForm) {
       const formData = JSON.stringify(isDataForm);
       postOrder(formData, dispatch);
-      showAddOrderModal(false);
+      if (showAddOrderModal) {
+        showAddOrderModal(false);
+      }
       setDataForm((prev) => ({
         ...prev,
         title: "",
         description: "",
       }));
-    } else{
-      alert('Заполните все поля')
+    } else {
+      alert("Заполните все поля");
     }
   };
 
@@ -79,7 +83,11 @@ const AddOrderModal: React.FC<AddOrderModalProps> = ({ showAddOrderModal }) => {
             type="button"
             className="btn btn-light"
             id={styles.form_submit_btn}
-            onClick={() => showAddOrderModal(false)}
+            onClick={() => {
+              if (showAddOrderModal) {
+                showAddOrderModal(false);
+              }
+            }}
           >
             ОТМЕНИТЬ
           </Button>

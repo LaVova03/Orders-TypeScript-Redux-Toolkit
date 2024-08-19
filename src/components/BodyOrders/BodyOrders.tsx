@@ -1,24 +1,28 @@
 import styles from "./BodyOrders.module.css";
 import React, { useState } from "react";
-import Plus from "../../assets/transparent.png";
-import Backet from "../../assets/backet.png";
-import Right from "../../assets/right.png";
 import { products } from "../../data";
-import ModalInfoOrders from "../ModalInfoOrders/ModalInfoOrders";
-import BootstrapDelete from "../BootstrapDelete/BootstrapDelete";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import { Dispatch } from "redux";
+
+import Plus from "../../assets/transparent.png";
+import Backet from "../../assets/backet.png";
+import Right from "../../assets/right.png";
 import Burger from "../../assets/burger.png";
 import AddOrderModal from "../AddOrderModal/AddOrderModal";
+import ModalInfoOrders from "../ModalInfoOrders/ModalInfoOrders";
+import BootstrapDelete from "../BootstrapDelete/BootstrapDelete";
+
+import { Product } from "../../types";
 
 interface ModalInfoOrdersProps {
-  products?: any;
+  products?: Product[];
   isDeleteModal?: boolean;
   index?: number;
   isIdDelete?: string;
-  dispatch?: any;
-  showAddOrderModal?: any;
+  dispatch?: Dispatch;
+  showAddOrderModal?: boolean;
 }
 
 const BodyOrders: React.FC<ModalInfoOrdersProps> = () => {
@@ -32,17 +36,17 @@ const BodyOrders: React.FC<ModalInfoOrdersProps> = () => {
   const [isIdDelete, setIdDelete] = useState("");
   const [isAddOrderModal, showAddOrderModal] = useState(false);
 
-  const calculateTotalPriceUsd = (products: any) => {
+  const calculateTotalPriceUsd = (products: Product[]): number => {
     let totalPrice = 0;
-    products.forEach((product: any) => {
+    products.forEach((product: Product) => {
       totalPrice += product.price[0].value;
     });
     return totalPrice;
   };
 
-  const calculateTotalPriceUah = (products: any) => {
+  const calculateTotalPriceUah = (products: Product[]): number => {
     let totalPrice = 0;
-    products.forEach((product: any) => {
+    products.forEach((product: Product) => {
       totalPrice += product.price[1].value;
     });
     return totalPrice;

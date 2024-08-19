@@ -1,18 +1,19 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { orders } from "../../data";
 import { useTranslation } from "react-i18next";
-import deleteDataId from "../../requests/deleteDataId";
 import { useDispatch } from "react-redux";
 import mockServer from "../../mockServer";
+
+import deleteDataId from "../../requests/deleteDataId";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 interface BootstrapProps {
   isIdDelete: string;
   index?: number;
   isDeleteModal?: boolean;
-  showModalDelete?: any;
+  showModalDelete?: (show: boolean) => void;
 }
 
 const Bootstrap: React.FC<BootstrapProps> = ({
@@ -31,7 +32,9 @@ const Bootstrap: React.FC<BootstrapProps> = ({
         "Order with ID " + isIdDelete + " has been deleted"
       );
       deleteDataId(isIdDelete, dispatch);
-      showModalDelete(false);
+      if (showModalDelete) {
+        showModalDelete(false);
+      }
     } catch (error) {
       console.error("Error sending message to server:", error);
     }
@@ -41,7 +44,11 @@ const Bootstrap: React.FC<BootstrapProps> = ({
     <>
       <Modal
         show={isDeleteModal}
-        onHide={() => showModalDelete(false)}
+        onHide={() => {
+          if (showModalDelete) {
+            showModalDelete(false);
+          }
+        }}
         backdrop="static"
         keyboard={false}
       >
@@ -62,7 +69,14 @@ const Bootstrap: React.FC<BootstrapProps> = ({
           )}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => showModalDelete(false)}>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              if (showModalDelete) {
+                showModalDelete(false);
+              }
+            }}
+          >
             {t("ОТМЕНИТЬ")}
           </Button>
           <Button variant="primary" onClick={deleteOrder}>

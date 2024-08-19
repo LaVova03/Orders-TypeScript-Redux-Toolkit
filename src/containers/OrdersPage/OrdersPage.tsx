@@ -1,8 +1,9 @@
-import { useEffect } from "react";
-import Orders from "../../components/Orders/Orders";
 import styles from "./OrdersPage.module.css";
-import getData from "../../requests/getData";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+
+import Orders from "../../components/Orders/Orders";
+import getData from "../../requests/getData";
 
 const OrdersPage = () => {
   const dispatch = useDispatch();

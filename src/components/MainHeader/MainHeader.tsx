@@ -1,9 +1,10 @@
 import styles from "./MainHeader.module.css";
 import { useState, useEffect } from "react";
-import Watch from "../../assets/watch.png";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { setTime, setDate } from "../../features/ChangePage";
+
+import Watch from "../../assets/watch.png";
 
 const MainHeader = () => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());

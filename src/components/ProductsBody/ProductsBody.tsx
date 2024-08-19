@@ -1,8 +1,10 @@
+import React from "react";
 import styles from "./ProductsBody.module.css";
 import { products } from "../../data";
 import { useEffect, useState } from "react";
-import BodyProducts from "../BodyProducts/BodyProducts";
 import { useTranslation } from "react-i18next";
+
+import BodyProducts from "../BodyProducts/BodyProducts";
 
 const Products = () => {
   const { t } = useTranslation();

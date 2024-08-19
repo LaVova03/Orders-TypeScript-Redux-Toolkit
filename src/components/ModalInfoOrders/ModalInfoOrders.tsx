@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ModalInfoOrders.module.css";
 import { orders } from "../../data";
+
 import Close from "../../assets/close.png";
 import Backet from "../../assets/backet.png";
 
